@@ -4,8 +4,9 @@ import requests
 from bs4 import BeautifulSoup
 import random
 
-def name_gen():
-    text_file = open("Names.txt", 'w')
+def name_gen(text_file_name):
+
+    text_file = open(text_file_name, "w")
 
     for run in range(10):
         url = "http://www.rinkworks.com/namegen/fnames.cgi?d=1&f=0"
@@ -28,33 +29,13 @@ def name_gen():
 
     text_file.close()
 
-def l_name_gen():
-    text_file = open("Last Names.txt", 'w')
+def names():
 
-    for run in range(10):
-        url = "http://www.rinkworks.com/namegen/fnames.cgi?d=1&f=0"
-        html = requests.get(url).content
+    name_gen("Names.txt")
+    name_gen("Surnames.txt")
 
-        soup = BeautifulSoup(html, "html.parser")
-        table = soup.select_one('table.fnames_results')
-        names = []
-
-        for row in table.find_all("tr"):
-            tds = row.find_all("td")
-            for i in tds:
-                i = str(i)
-                i = i[4:-5]
-                names.append(i)
-
-        for i in names:
-            text_file.write(i)
-            text_file.write("\n")
-
-    text_file.close()
-
-def namer():
     names = open("Names.txt", 'r').readlines()
-    lnames = open("Last Names.txt", 'r').readlines()
+    lnames = open("Surnames.txt", 'r').readlines()
 
     text_file = open("Names List.txt", 'w')
 
@@ -64,7 +45,4 @@ def namer():
             text_file.write(full_name)
     text_file.close()
 
-name_gen()
-l_name_gen()
-namer()
-
+names()
