@@ -25,6 +25,6 @@ class NPC :
 
         return stats
     
-    John = NPC()
-    print(John.name_data())
-    print(John.stats_data())
+John = NPC()
+print(John.name_data())
+print(John.stats_data())
