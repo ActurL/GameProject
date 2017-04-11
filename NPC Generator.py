@@ -24,5 +24,7 @@ class NPC :
         stats = self.stats
 
         return stats
-
-
+    
+    John = NPC()
+    print(John.name_data())
+    print(John.stats_data())
