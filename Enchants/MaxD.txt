@@ -1,0 +1,18 @@
+While attuned your body rots.
+Your highest stat becomes equal to your lowest stat. 
+When first attuned you are given a quest by the DM which you must complete, or your HP will be halved permanently.
+Each time you attune to the item, a bodiless lifeforce attempts to take control of your body. On a failed DC 13 CHA saving throw, it succeeds. To remove it, requires an intervention by a cleric or paladin via divine Greater restoration.
+Creatures with a CR of 0 drop dead within 10 ft of you
+Houses a death slaad that has a 10% chance of escaping when the item is used.
+A type of creature (DMs choice) is always hostile towards you.
+Potions have no effect within 10 ft.
+Any magic scrolls within 10 ft are erased.
+Each day you must draw blood from yourself, losing 1d6 from your max HP permanently each time. 
+Gain a form of madness (DMG chapter 8)
+You take 4d10 psychic damage when attuned. If you fall unconscious, you lose memory of the past 10 days and lose proficiency of one type (DMs choice). If you take damage equal to half or more of your max HP, you lose 2 proficiencies. 
+56-60 but with 8d10 psychic damage.
+To attune you must sacrifice a creature of your kind, or your max HP is halved.
+You age 3d10 years when attuned. You die and become a wight if you fail a DC 10 CON saving throw.
+You are vulnerable to all damage.
+While wielding this item, your max HP is reduced by LVLd10. 
+If you fall unconscious, you die. (ex. A lvl 7 PC loses 7d10 HP)

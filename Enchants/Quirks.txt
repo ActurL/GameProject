@@ -1,0 +1,20 @@
+Bonus action to make item shine bright light for 10 ft or to turn it off
+The user can speak a language or speak to a type of creature of the DMs choice
+The item glows faintly when a certain type of creature is in range(depends on gem value)
+Grants bonus 1dLVL damage(round down;ex. if PC is lvl 7 then 1d6) of 1d4 type (fire/ice/lightning/poison) User gets the same 1dLVL damage if attacked by the opposite type. 
+The item has no shadow and/or reflection(DM choice)
+Transfers a portion of damage dealt to the PC as HP (1 attack per fight). The HP is removed when the combat ends.
+User can change the item’s appearance in minor ways, such as the color.
+Item never gets dirty.
+Each time the item is used, steam emits from the user’s nose. If the item is an armor or shield, it randomly changes color.
+Needs blood every 24h to activate its properties.
+The item is immune to changes in temperature. It cannot be burned, melted, or frozen. 
+The item randomly changes appearance in small ways (color, texture, etc.)
+The user receives a strand of randomly colored hair every 1d4 days for 1d20 hours.
+The item crumbles at dusk and reforms at dawn.
+Eyes of the user turn deep purple when attuned.
+The user who is attuned can always tell in which direction the item is located.
+Cannot be destroyed by normal means, unless a powerful spell (ex. wish) is used.
+Appearance changes under certain conditions (DMs choice).
+Item becomes invisible as a bonus action.
+reroll

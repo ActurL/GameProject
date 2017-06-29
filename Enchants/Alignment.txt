@@ -1,0 +1,3 @@
+Lawful
+Chaotic
+Neutral

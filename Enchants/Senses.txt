@@ -1,0 +1,4 @@
+Hearing 30ft
+Hearing and vision 60ft
+Hearing and darkvision 30ft
+Hearing and vision 80ft
