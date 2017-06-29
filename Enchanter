@@ -1,0 +1,169 @@
+import random
+
+def dice(advantage, maximumRoll):
+    roll = random.randint(1, maximumRoll)
+
+    if advantage:
+        advRoll = random.randint(1, maximumRoll)
+        if advRoll > roll:
+            roll = advRoll
+
+    return roll
+
+def gemTakesEnchant():
+    roll = dice(False, 20)
+
+    if roll == 1:
+        adv = False
+        success = False
+
+    elif roll == 20:
+        adv = True
+        success = True
+
+    else:
+        adv = False
+        success = True
+
+    return success, adv
+
+def itemTakesEnchant():
+    roll = dice(False, 100)
+
+    if roll <= 10:
+        success = False
+        output = "Item breaks"
+
+    elif roll >= 11 and roll <= 20:
+        success = True
+        output = "Item's magnitude is halved"
+
+    elif roll >= 21 and roll <= 99:
+        success = True
+        output = "Item is enchanted"
+
+    else:
+        success = True
+        output = "Item's magnitude is doubled"
+
+    return success, output
+
+def setRandomWeights(value):
+    if "l" in value:
+        weights = [21, 61, 81, 96]
+        
+    elif "m" in value:
+        weights = [31, 51, 66, 86]
+        
+    elif "h" in value:
+        weights = [11, 26, 41, 81]
+
+    return weights
+
+def fileRead(fileName):
+    file = open("Enchants\\" + fileName, "r")
+    enchants = file.readlines()
+    output = ""
+    count = 1
+    
+    while count > 0:
+        roll = dice(False, len(enchants) - 1)
+
+        if "reroll" in enchants[roll - 1]:
+            count = 2
+
+        else:
+            output = output + enchants[roll]
+            count -= 1
+
+    return output
+    
+def addEffectType(limit, adv):
+    effectType = []
+    reroll = True
+    while reroll:
+        reroll = False
+        roll = dice(adv, 102)
+        
+        if roll >= 1 and roll < limit[0]:
+            effectType.append("MaxD")
+
+        elif roll >= limit[0] and roll < limit[1]:
+            effectType.append("MinD")
+
+        elif roll >= limit[1] and roll < limit[2]:
+            effectType.append("Quirks")
+            reroll = True
+
+        elif roll >= limit[2] and roll < limit[3]:
+            effectType.append("MinG")
+
+        elif roll >= limit[3] and roll < 100:
+            effectType.append("MaxG")
+
+        elif roll == 100:
+            effectType.append("Evil")
+            reroll = True
+
+        elif roll == 101:
+            effectType.append("Neutral")
+            reroll = True
+
+        elif roll == 102:
+            effectType.append("Good")
+            reroll = True
+
+    return effectType
+
+def createPersonality(alignment):
+    output = "Item's personality:\n   " + alignment
+
+    output = output + "\n   " + fileRead("Alignment.txt")
+    output = output + "   " + fileRead("Communication.txt")
+    output = output + "   " + fileRead("Senses.txt")
+    output = output + "   " + fileRead("Traits.txt")
+    output = output + "   " + fileRead("Bonds.txt")
+
+    return output
+
+def main():
+    gemValue = ""
+    acceptedInputs = ["l", "m", "h", "low", "med", "medium", "high"]
+    
+    while gemValue not in acceptedInputs:
+        gemValue = input("Input gem value (low/medium/high): ")
+        gemValue = gemValue.lower()
+
+    print()
+    effectWeights = setRandomWeights(gemValue)
+    
+    gemWorks, advantage = gemTakesEnchant()
+    
+    if gemWorks:
+        print("Gem takes enchantment")
+        itemWorks, itemOutcome = itemTakesEnchant()
+        print(itemOutcome + "\n")
+
+        if itemWorks:
+            effectTypes = addEffectType(effectWeights, advantage)
+
+            for i in range(len(effectTypes)):
+                
+                if effectTypes[i] == "Evil" or effectTypes[i] == "Neutral" or effectTypes[i] == "Good":
+                    print(createPersonality(effectTypes[i]))
+                    
+                else:
+                    print(fileRead(effectTypes[i] + ".txt"))
+            
+
+    else:
+        print("Gem shatters\n")
+
+
+if __name__ == "__main__":
+    enchant = "y"
+    while enchant == "y":
+        main()
+        enchant = input("keep enchanting? (y/n) ")
+        print()
+        enchant = enchant.lower()
