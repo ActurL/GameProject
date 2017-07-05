@@ -1,0 +1,7 @@
+Slime,Blue Slime,10,3,7
+Undead,Zombie,5,4,12
+Undead,Skeleton,7,5,7
+Beast,Bat,2,1,3
+Beast,Wolf,15,7,10
+Goblinoid,Goblin,12,6,11
+Goblinoid,Hob Goblin,16,8,15
